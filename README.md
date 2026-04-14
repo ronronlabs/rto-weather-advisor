@@ -34,7 +34,7 @@ to go into the office, based on Montreal weather forecasts.
 - GOOGLE_API_KEY=your-gemini-api-key
 
 ## Development
-The notebook (`rto-weather-agent.ipynb`) contains the development process, including code cells for creating and testing the agent in Google Colab.
+The notebook (`rto-weather-agent.py`) contains the development process, including code cells for creating and testing the agent in Google Colab.
 
 ## About
 Built by Daniel Young as a portfolio project to showcase applied data science skills in multi-source API integration, data processing, and LLM-driven automation, using a Python-based agent to deliver daily weather and RTO day selectio recommendations for improving commute life.
