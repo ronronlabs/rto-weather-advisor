@@ -28,10 +28,10 @@ to go into the office, based on Montreal weather forecasts.
 - A Gmail account with an App Password
 
 ### Environment Variables
-RECEIVER_EMAIL=your-email@example.com
-SENDER_EMAIL=your-sender@gmail.com
-SENDER_APP_PASSWORD=your-gmail-app-password
-GOOGLE_API_KEY=your-gemini-api-key
+- RECEIVER_EMAIL=your-email@example.com
+- SENDER_EMAIL=your-sender@gmail.com
+- SENDER_APP_PASSWORD=your-gmail-app-password
+- GOOGLE_API_KEY=your-gemini-api-key
 
 ## Development
 The notebook (`rto-weather-agent.ipynb`) contains the development process, including code cells for creating and testing the agent in Google Colab.
