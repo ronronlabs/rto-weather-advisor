@@ -1,6 +1,6 @@
 # 🌦️ RTO Weather Advisor
 
-An AI-powered agent that analyzes weather forecasts to determine the most comfortable 3 days to commute, ensuring you avoid rain, snow, and freezing temperatures while adhering to corporate scheduling policies.
+An AI agent that analyzes weather forecasts to determine the most comfortable 3 days to commute, ensuring you avoid rain, snow, and freezing temperatures while adhering to corporate scheduling policies.
 
 ## 📸 Example Email Report
 ![Agent Output](RTOScreenshot.png)
