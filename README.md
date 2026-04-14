@@ -6,21 +6,19 @@ An AI-powered agent that analyzes weather forecasts to determine the most comfor
 ![Agent Output](RTOScreenshot.png)
 
 ## 🌟 Features
-1. Fetches a 10-day forecast from Open-Meteo API
-2. Scores each day using a custom penalty system (freezing rain, 
-   rain, snow, cold) with extra penalty on commute hours (8AM / 4PM)
-3. Finds the optimal 3-day combo that includes either Monday or Friday (company policy)
-4. Uses Google Gemini AI to generate a natural, personalized explanation
-5. Sends an HTML email summary every week
-6. Designed for Google Cloud Run (serverless)
+- **Weather Analytics** — Fetches 10-day forecasts from the Open-Meteo API.
+- **Commute Scoring Logic** — Calculates a "Quality Penalty" by specifically weighting commute hours (8:00 AM and 4:00 PM) against precipitation probability and temperature.
+- **Policy Enforcement** — Automatically finds the best 3-day combination that includes a mandatory Monday or Friday (per typical office policies).
+- **AI-Powered Reasoning** — Uses Google Gemini (Gemma-4.3) to provide a natural language explanation of why specific days were chosen
+- **HTML Email Reports** — Sends a beautifully formatted dashboard directly to your inbox with commute alerts and temperature summaries.
+- **Cloud-Native** – Designed to run as a stateless function on Google Cloud Run or AWS Lambda.
 
 ## Tech Stack
-- **Python** — core logic
-- **Google Cloud Run** — serverless deployment + scheduled trigger
+- **Language** — Python 3.11+
 - **Gemini AI (Gemma 4)** — natural language explanation
 - **Open-Meteo API** — free weather data
 - **Gmail SMTP** — email delivery
-- **Google Cloud Run** – Deployment
+- **Google Cloud Run** — serverless deployment + scheduled trigger
 
 ## Setup
 
@@ -41,8 +39,18 @@ An AI-powered agent that analyzes weather forecasts to determine the most comfor
 - SENDER_APP_PASSWORD=your-gmail-app-password
 - GOOGLE_API_KEY=your-gemini-api-key
 
+### 📊 How the Scoring Works
+- **Freezing Rain** — -100 points (Highest priority avoidance)
+- **Rain** — 70 points
+- **Snow** — -40 points
+- **Commute Multiplier** — Penalties are multiplied by 4.0 if they occur during the 8 AM or 4 PM windows.
+- **Probability Multiplier** — High-certainty rain (90%+) carries more weight than "slight chances."
+
 ## Development
 The notebook (`rto-weather-agent.py`) contains the development process, including code cells for creating and testing the agent in Google Colab.
 
 ## About
 Built by Daniel Young as a portfolio project to showcase applied data science skills in multi-source API integration, data processing, and LLM-driven automation, using a Python-based agent to deliver daily weather and RTO day selectio recommendations for improving commute life.
+
+## License
+MIT License - feel free to use and modify the code!
